@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "gcfx22": {
+    "gcf22": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -40,7 +40,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/gcfx22",
+            "outputPath": "dist/gcf22",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -91,10 +91,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "gcfx22:build:production"
+              "browserTarget": "gcf22:build:production"
             },
             "development": {
-              "browserTarget": "gcfx22:build:development"
+              "browserTarget": "gcf22:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -102,7 +102,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "gcfx22:build"
+            "browserTarget": "gcf22:build"
           }
         },
         "test": {
@@ -125,5 +125,5 @@
       }
     }
   },
-  "defaultProject": "gcfx22"
+  "defaultProject": "gcf22"
 }
