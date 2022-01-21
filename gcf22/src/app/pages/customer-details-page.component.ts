@@ -14,6 +14,11 @@ import { Customer } from "../types/customers";
         </ng-container>
 
         <p *ngIf="!customer">En cours de chargement</p>
+        <table>
+            <tr>
+                <td>liste des factures</td>
+            </tr>
+        </table>
         <button routerLink="/">Retour aux clients</button>
         <br>
         <br>

@@ -7,11 +7,13 @@ import { Customers } from "./types/customers";
 
     template: `
     <button routerLink="/create">Créer un client</button>
-    <ul>
-      <li *ngFor="let item of customers">
-        <label><a routerLink="/{{item.id}}">{{item.fullName}}</a> | {{item.mail}}</label>
-      </li>
-    </ul>
+    <div id="table">
+      <table>
+        <tr *ngFor="let item of customers">
+          <td><a routerLink="/{{item.id}}">{{item.fullName}}</a> | {{item.mail}}</td>
+        </tr>
+      </table>
+    </div>
   
     `,
     styles: []
