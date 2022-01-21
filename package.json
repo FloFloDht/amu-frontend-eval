@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
-    "serve": "cd gcfx22 && ng serve"
+    "serve": "cd gcf22 && ng serve"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,6 @@
   "homepage": "https://github.com/liorchamla/amu-frontend-eval#readme",
   "devDependencies": {
     "@types/cypress": "^1.1.3",
-    "cypress": "^9.2.0"
+    "cypress": "^9.2.1"
   }
 }
