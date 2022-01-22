@@ -22,7 +22,7 @@ import { Customer } from "../types/customers";
         <button routerLink="/">Retour aux clients</button>
         <br>
         <br>
-        <button routerLink="/id/invoices/add">Créer une facture</button>
+        <button routerLink="/id/invoices/add">Créer une facture</button>  <!-- TODO :  corriger l'url avec l'id du client --> 
     `,
     styles:[]
 })
@@ -34,9 +34,8 @@ export class CustomerDetailsPageComponent{
     constructor(private route: ActivatedRoute, private service: CustomersService){ }
 
     ngOnInit(){
+        
         const id: number = Number(this.route.snapshot.paramMap.get('id'));
-
-        console.log("Affichons " + id);
 
         this.service
             .findOne(id)
