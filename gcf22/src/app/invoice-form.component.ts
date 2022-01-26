@@ -1,6 +1,5 @@
 import { Component, Output, EventEmitter } from "@angular/core";
 import { FormControl, FormGroup } from "@angular/forms";
-import { Router } from "@angular/router";
 
 @Component({
 
@@ -32,8 +31,6 @@ export class InvoicesFromComponent{
     @Output()
     onNewInvoices = new EventEmitter<any>();
 
-    constructor(private router: Router){ }
-
     form = new FormGroup({
         amount: new FormControl(),
         state: new FormControl()
@@ -47,7 +44,6 @@ export class InvoicesFromComponent{
 
         console.log(typeof this.form.value);
         this.onNewInvoices.emit(this.form.value);
-        this.router.navigate(['/']);
 
         this.form.setValue({
             amount: '',
