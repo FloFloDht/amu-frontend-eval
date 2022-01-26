@@ -5,9 +5,11 @@ export type Invoice = {
     //une propriété unique id numérique
     id: number,
     //une propriété montant de type numérique
-    amout: number,
+    amount: number,
     //une propriété etat de type string
-    state: string
+    state: string,
+    //une propriété idCustomer afin de relier la facture à un client, de type numérique
+    idCustomer: number
 }
 
 export type Invoices = Invoice[];
