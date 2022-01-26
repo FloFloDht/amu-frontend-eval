@@ -10,16 +10,16 @@ import { FormControl, FormGroup } from "@angular/forms";
             <input
                 formControlName="amount"
                 type="number" 
-                name="invoice-amount" 
+                name="amount" 
                 placeholder="Entrer le nom montant"
             /> <br>
             <input
             formControlName="state"
                 type="text" 
-                name="invoice-state" 
+                name="status" 
                 placeholder="Entrer l'état de la facture"
             /><br>
-            <button type="submit" name="submit"> Enregistrer </button>
+            <button type="submit" name="submit"> Enregistrer la facture</button>
         </form>
     `,
     styles:[]

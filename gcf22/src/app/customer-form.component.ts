@@ -11,13 +11,13 @@ import { FormControl, FormGroup } from "@angular/forms";
             <input
                 formControlName="fullName"
                 type="text" 
-                name="customer-fullName" 
+                name="fullName" 
                 placeholder="Entrer le nom Complet"
             /> <br>
             <input
             formControlName="mail"
                 type="text" 
-                name="customer-mail" 
+                name="email" 
                 placeholder="Entrer un mail"
             /><br>
             <button type="submit" name="submit"> Enregistrer </button>
