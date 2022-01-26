@@ -20,7 +20,7 @@ import { FormControl, FormGroup } from "@angular/forms";
                 name="customer-mail" 
                 placeholder="Entrer un mail"
             /><br>
-            <button> Enregistrer </button>
+            <button type="submit" name="submit"> Enregistrer </button>
         </form>
         <br>
         <div id="formButton">

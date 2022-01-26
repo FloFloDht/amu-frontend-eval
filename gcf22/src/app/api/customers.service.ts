@@ -5,7 +5,6 @@ import { Customers } from "../types/customers";
 
 const SUPABASE_URL = 'https://eljkrkenpctuocyweeao.supabase.co/rest/v1/customers';
 const SUPABASE_API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJvbGUiOiJhbm9uIiwiaWF0IjoxNjQyMTY5ODg4LCJleHAiOjE5NTc3NDU4ODh9.quGm6-7iNzla7COqnN272nD0BAJJeeEghANG_0v1YgQ";
-
 @Injectable()
 export class CustomersService{
 

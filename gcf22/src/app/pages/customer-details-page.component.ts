@@ -1,7 +1,9 @@
 import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { CustomersService } from "../api/customers.service";
+import { InvoicesService } from "../api/invoices.service";
 import { Customer } from "../types/customers";
+import { Invoice } from "../types/invoices";
 
 @Component({
 
@@ -14,6 +16,7 @@ import { Customer } from "../types/customers";
         </ng-container>
 
         <p *ngIf="!customer">En cours de chargement</p>
+        <app-customer-invoices></app-customer-invoices>
         
         <button routerLink="/">Retour aux clients</button>
         <br>
@@ -26,16 +29,28 @@ import { Customer } from "../types/customers";
 export class CustomerDetailsPageComponent{
 
     customer?: Customer;
+    invoice?: Invoice;
 
-    constructor(private route: ActivatedRoute, private service: CustomersService){ }
+    constructor(private route: ActivatedRoute, 
+        private customersService: CustomersService,
+        private invoicesService: InvoicesService){ }
 
     ngOnInit(){
         
         const id: number = Number(this.route.snapshot.paramMap.get('id'));
 
-        this.service
+        this.customersService
             .findOne(id)
-            .subscribe(customers => this.customer = customers[0]);
+            .subscribe(customers => {
+                console.log(customers[0])
+                this.customer = customers[0]});
+
+        this.invoicesService
+            .findAllByCustomerId(id)
+            .subscribe(invoices => {
+                console.log(invoices[0])
+                this.invoice = invoices[0]
+            });
     }
 
 }

@@ -13,6 +13,8 @@ import { CustomerDetailsPageComponent } from './pages/customer-details-page.comp
 import { InvoicesFormPageComponent } from './pages/invoice-form-page.component';
 import { CustomerFormPageComponent } from './pages/customer-form-page.component';
 import { InvoicesFromComponent } from './invoice-form.component';
+import { InvoicesService } from './api/invoices.service';
+import { CustomerInvoicesComponent } from './customer-invoices.component';
 
 const routes: Routes = [
   {path: '', component: CustomersListPageComponent},
@@ -30,7 +32,8 @@ const routes: Routes = [
     CustomerDetailsPageComponent,
     CustomerFormPageComponent,
     InvoicesFormPageComponent,
-    InvoicesFromComponent
+    InvoicesFromComponent,
+    CustomerInvoicesComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,10 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [CustomersService],
+  providers: [
+    CustomersService, 
+    InvoicesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

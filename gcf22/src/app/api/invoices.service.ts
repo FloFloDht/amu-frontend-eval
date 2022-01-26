@@ -8,6 +8,7 @@ const SUPABASE_API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhY
 
 @Injectable()
 export class InvoicesService {
+
     constructor(private http: HttpClient){ }
 
     findAllByCustomerId(idCustomer:number):Observable<Invoices> {
@@ -19,20 +20,20 @@ export class InvoicesService {
             }
         });
     } 
-    
-    create(invoice: Invoice): Observable<Invoice> {
-        return this.http.post<Invoice>(SUPABASE_URL, {
-            amount: invoice.amount,
-            status: invoice.state,
-            id_customer: invoice.idCustomer
+
+    create(amount: number, state: string, idCustomer: number): Observable<Invoices>{
+        return this.http.post<Invoices>(SUPABASE_URL, {
+            amount: amount,
+            state: state,
+            idCustomer: idCustomer
         }, {
-          headers: {
+            headers: {
                 "Content-Type": "application/json",
                 apiKey: SUPABASE_API_KEY,
                 Prefer: "return=representation"
             }
         });
-    }
+    } 
 
 
 

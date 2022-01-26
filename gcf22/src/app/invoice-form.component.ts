@@ -1,15 +1,25 @@
-import { Component } from "@angular/core";
+import { Component, Output, EventEmitter } from "@angular/core";
+import { FormControl, FormGroup } from "@angular/forms";
 
 @Component({
 
     selector: 'app-invoice-form',
     template: `
         <h2>Création d'une facture</h2>
-        <form>
-            <input type="number" name="invoice-amount" placeholder="Montant de la facture"/> <br>
-            <input type="text" name="invoice-state" placeholder="Etat de la facture"/> <br>
-            <button>Envoyer</button><br>
-            <button routerLink="/">Retour</button>
+        <form (ngSubmit)="onSubmit()" [formGroup]="form">
+            <input
+                formControlName="amount"
+                type="number" 
+                name="invoice-amount" 
+                placeholder="Entrer le nom montant"
+            /> <br>
+            <input
+            formControlName="state"
+                type="text" 
+                name="invoice-state" 
+                placeholder="Entrer l'état de la facture"
+            /><br>
+            <button type="submit" name="submit"> Enregistrer </button>
         </form>
     `,
     styles:[]
@@ -17,5 +27,23 @@ import { Component } from "@angular/core";
 })
 
 export class InvoicesFromComponent{
+
+    @Output()
+    onNewInvoices = new EventEmitter<any>();
+
+    form = new FormGroup({
+        amount: new FormControl(),
+        state: new FormControl()
+    })
+
+    onSubmit(){
+        console.log(typeof this.form.value);
+        this.onNewInvoices.emit(this.form.value);
+
+        this.form.setValue({
+            amount: '',
+            state: ''
+        });
+    }
 
 }
