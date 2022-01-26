@@ -1,5 +1,6 @@
 import { Component, Output, EventEmitter } from "@angular/core";
 import { FormControl, FormGroup } from "@angular/forms";
+import { Router } from "@angular/router";
 
 @Component({
 
@@ -35,6 +36,8 @@ export class CustomerFormComponent{
     @Output()
     onNewCustomer = new EventEmitter<any>();
 
+    constructor(private router: Router){ }
+
     form = new FormGroup({
         fullName: new FormControl(),
         mail: new FormControl()
@@ -43,6 +46,7 @@ export class CustomerFormComponent{
     onSubmit(){
         console.log(typeof this.form.value);
         this.onNewCustomer.emit(this.form.value);
+        this.router.navigate(['/']);
 
         this.form.setValue({
             fullName: '',
