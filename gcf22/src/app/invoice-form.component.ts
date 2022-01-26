@@ -37,6 +37,11 @@ export class InvoicesFromComponent{
     })
 
     onSubmit(){
+        // let data=[];
+        // data.push(this.form.value[0])
+        // data.push(this.form.value[1])
+        // data.push() //recup via l'url 
+
         console.log(typeof this.form.value);
         this.onNewInvoices.emit(this.form.value);
 

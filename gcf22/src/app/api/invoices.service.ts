@@ -12,7 +12,7 @@ export class InvoicesService {
     constructor(private http: HttpClient){ }
 
     findAllByCustomerId(idCustomer:number):Observable<Invoices> {
-        return this.http.get<Invoices>(SUPABASE_URL + '?id_customer=eq.' + idCustomer, {
+        return this.http.get<Invoices>(SUPABASE_URL + '?idCustomer=eq.' + idCustomer, {
           headers: {
                 "Content-Type": "application/json",
                 apiKey: SUPABASE_API_KEY,

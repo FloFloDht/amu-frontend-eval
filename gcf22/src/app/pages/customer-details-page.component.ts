@@ -3,7 +3,7 @@ import { ActivatedRoute } from "@angular/router";
 import { CustomersService } from "../api/customers.service";
 import { InvoicesService } from "../api/invoices.service";
 import { Customer } from "../types/customers";
-import { Invoice } from "../types/invoices";
+import { Invoice, Invoices } from "../types/invoices";
 
 @Component({
 
@@ -16,7 +16,7 @@ import { Invoice } from "../types/invoices";
         </ng-container>
 
         <p *ngIf="!customer">En cours de chargement</p>
-        <app-customer-invoices></app-customer-invoices>
+        <app-customer-invoices [invoices]="invoices"></app-customer-invoices>
         
         <button routerLink="/">Retour aux clients</button>
         <br>
@@ -29,7 +29,7 @@ import { Invoice } from "../types/invoices";
 export class CustomerDetailsPageComponent{
 
     customer?: Customer;
-    invoice?: Invoice;
+    invoices: Invoices = [];
 
     constructor(private route: ActivatedRoute, 
         private customersService: CustomersService,
@@ -49,7 +49,7 @@ export class CustomerDetailsPageComponent{
             .findAllByCustomerId(id)
             .subscribe(invoices => {
                 console.log(invoices[0])
-                this.invoice = invoices[0]
+                this.invoices = invoices
             });
     }
 

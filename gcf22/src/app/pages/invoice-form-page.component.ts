@@ -6,7 +6,7 @@ import { Invoices } from "../types/invoices";
 
     selector: 'app-invoice-form-page',
     template:`
-        <app-invoice-form (onNewInvoice)="addInvoices($event)"></app-invoice-form>
+        <app-invoice-form (onNewInvoices)="addInvoices($event)"></app-invoice-form>
     `,
     styles:[]
 })
@@ -18,6 +18,7 @@ export class InvoicesFormPageComponent{
     constructor(private service: InvoicesService){ }
 
     addInvoices(invoice: any){
+        console.log(invoice);
         this.service
             .create(invoice.amount, invoice.state, invoice.idCustomer)
             .subscribe((invoices) => this.invoices.push(invoices[0]));

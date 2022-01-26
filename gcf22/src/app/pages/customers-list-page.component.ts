@@ -5,9 +5,7 @@ import { Customers } from "../types/customers";
 @Component({
     selector: "app-customer-list-page",
     template:`
-        <app-customers-list 
-            [customers]="customers">
-        </app-customers-list>
+        <app-customers-list [customers]="customers"></app-customers-list>
         
     `,
     styles: []
