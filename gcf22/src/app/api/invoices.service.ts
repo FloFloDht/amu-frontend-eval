@@ -21,10 +21,10 @@ export class InvoicesService {
         });
     } 
 
-    create(amount: number, state: string, idCustomer: number): Observable<Invoice>{
+    create(amount: number, status: string, idCustomer: number): Observable<Invoice>{
         return this.http.post<Invoice>(SUPABASE_URL, {
             amount: amount,
-            state: state,
+            status: status,
             idCustomer: idCustomer
         }, {
             headers: {

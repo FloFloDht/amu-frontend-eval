@@ -13,7 +13,7 @@ import { Invoices } from "./types/invoices";
             </tr>
             <tr *ngFor="let invoice of invoices">
                 <td>{{invoice.amount}}</td>
-                <td>{{invoice.state}}</td>
+                <td>{{invoice.status}}</td>
             </tr>
         </table>
     `

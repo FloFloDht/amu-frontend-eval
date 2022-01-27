@@ -21,7 +21,7 @@ export class InvoicesFormPageComponent{
     addInvoices(invoice: Invoice){
         console.log(invoice);
         this.service
-            .create(invoice.amount, invoice.state, invoice.idCustomer)
+            .create(invoice.amount, invoice.status, invoice.idCustomer)
             .subscribe(response => {
                 this.router.navigate(['/', invoice.idCustomer]);
             });

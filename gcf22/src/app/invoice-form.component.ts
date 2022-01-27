@@ -16,7 +16,7 @@ import { Invoice } from "./types/invoices";
                 placeholder="Entrer le nom montant"
             /> <br>
             <input
-            formControlName="state"
+            formControlName="status"
                 type="text" 
                 name="status" 
                 placeholder="Entrer l'état de la facture"
@@ -38,7 +38,7 @@ export class InvoicesFromComponent{
 
     form = new FormGroup({
         amount: new FormControl(),
-        state: new FormControl()
+        status: new FormControl()
     })
 
     constructor(private route: ActivatedRoute){ }
@@ -57,7 +57,7 @@ export class InvoicesFromComponent{
 
         this.form.setValue({
             amount: '',
-            state: ''
+            status: ''
         });
     }
 
