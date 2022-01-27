@@ -10,7 +10,7 @@ import { Customers } from "./types/customers";
     <div id="table">
       <table>
         <tr *ngFor="let item of customers">
-          <td><a routerLink="/{{item.id}}">{{item.fullName}}</a> | {{item.mail}}</td>
+          <td><a routerLink="/{{item.id}}">{{item.fullName}}</a> | {{item.email}}</td>
         </tr>
       </table>
     </div>

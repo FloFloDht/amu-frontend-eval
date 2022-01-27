@@ -19,10 +19,10 @@ export class CustomersService{
         });
     }
 
-    create(fullName: string, mail: string): Observable<Customers>{
+    create(fullName: string, email: string): Observable<Customers>{
         return this.http.post<Customers>(SUPABASE_URL, {
             fullName: fullName,
-            mail: mail
+            email: email
         }, {
             headers: {
                 "Content-Type": "application/json",

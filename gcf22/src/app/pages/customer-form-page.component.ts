@@ -19,7 +19,7 @@ export class CustomerFormPageComponent{
 
     addCustomers(customer: any){
         this.service
-          .create(customer.fullName, customer.mail)
+          .create(customer.fullName, customer.email)
           .subscribe((customers) => this.customers.push(customers[0]));
     }
 }

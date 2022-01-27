@@ -11,7 +11,7 @@ import { Invoice, Invoices } from "../types/invoices";
     template:`
         <ng-container *ngIf="customer">
         <h2>Fiche de {{ customer.fullName }}</h2>
-        <h3>({{customer.mail}})</h3>
+        <h3>({{customer.email}})</h3>
         
         </ng-container>
 

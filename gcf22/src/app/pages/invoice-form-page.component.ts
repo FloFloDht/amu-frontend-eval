@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
+import { Router } from "@angular/router";
 import { InvoicesService } from "../api/invoices.service";
-import { Invoices } from "../types/invoices";
+import { Invoice, Invoices } from "../types/invoices";
 
 @Component({
 
@@ -13,15 +14,17 @@ import { Invoices } from "../types/invoices";
 
 export class InvoicesFormPageComponent{
 
-    invoices: Invoices = [];
+    invoice: Invoice;
 
-    constructor(private service: InvoicesService){ }
+    constructor(private service: InvoicesService, private router: Router){ }
 
-    addInvoices(invoice: any){
+    addInvoices(invoice: Invoice){
         console.log(invoice);
         this.service
             .create(invoice.amount, invoice.state, invoice.idCustomer)
-            .subscribe((invoices) => this.invoices.push(invoices[0]));
+            .subscribe(response => {
+                this.router.navigate(['/', invoice.idCustomer]);
+            });
     }
 
 }

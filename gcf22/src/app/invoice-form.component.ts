@@ -1,5 +1,7 @@
 import { Component, Output, EventEmitter } from "@angular/core";
 import { FormControl, FormGroup } from "@angular/forms";
+import { ActivatedRoute } from "@angular/router";
+import { Invoice } from "./types/invoices";
 
 @Component({
 
@@ -28,6 +30,9 @@ import { FormControl, FormGroup } from "@angular/forms";
 
 export class InvoicesFromComponent{
 
+    id: number; 
+    invoice: Invoice;
+
     @Output()
     onNewInvoices = new EventEmitter<any>();
 
@@ -36,14 +41,19 @@ export class InvoicesFromComponent{
         state: new FormControl()
     })
 
+    constructor(private route: ActivatedRoute){ }
+
+    ngOnInit(){
+        this.id = Number(this.route.snapshot.paramMap.get('id'));
+    }
+
     onSubmit(){
-        // let data=[];
-        // data.push(this.form.value[0])
-        // data.push(this.form.value[1])
-        // data.push() //recup via l'url 
+
+        this.invoice = this.form.value;
+        this.invoice.idCustomer = this.id;
 
         console.log(typeof this.form.value);
-        this.onNewInvoices.emit(this.form.value);
+        this.onNewInvoices.emit(this.invoice);
 
         this.form.setValue({
             amount: '',

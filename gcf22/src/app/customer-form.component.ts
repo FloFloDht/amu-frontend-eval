@@ -16,7 +16,7 @@ import { Router } from "@angular/router";
                 placeholder="Entrer le nom Complet"
             /> <br>
             <input
-            formControlName="mail"
+            formControlName="email"
                 type="text" 
                 name="email" 
                 placeholder="Entrer un mail"
@@ -40,7 +40,7 @@ export class CustomerFormComponent{
 
     form = new FormGroup({
         fullName: new FormControl(),
-        mail: new FormControl()
+        email: new FormControl()
     })
 
     onSubmit(){
@@ -50,7 +50,7 @@ export class CustomerFormComponent{
 
         this.form.setValue({
             fullName: '',
-            mail: ''
+            email: ''
         });
     }
    
