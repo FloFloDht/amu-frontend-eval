@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
-    "serve": "cd gcf22 && ng serve"
+    "serve": "npm i --prefix ./gcf22/ & npm start --prefix ./gcf22/"
   },
   "repository": {
     "type": "git",
