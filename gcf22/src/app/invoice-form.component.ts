@@ -15,12 +15,12 @@ import { Invoice } from "./types/invoices";
                 name="amount" 
                 placeholder="Entrer le nom montant"
             /> <br>
-            <input
-            formControlName="status"
-                type="text" 
-                name="status" 
-                placeholder="Entrer l'état de la facture"
-            /><br>
+            <div class="select">
+                <select class="form-select" formControlName="status" name="status">
+                <option ngValue="PAID">PAID</option>
+                <option ngValue="SENT">SENT</option>
+          </select>
+            </div><br>
             <button type="submit" name="submit"> Enregistrer la facture</button>
         </form>
     `,

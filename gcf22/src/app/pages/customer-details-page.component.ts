@@ -18,10 +18,10 @@ import { Invoice, Invoices } from "../types/invoices";
         <p *ngIf="!customer">En cours de chargement</p>
         <app-customer-invoices [invoices]="invoices"></app-customer-invoices>
         
+        <a routerLink="/{{customer?.id}}/invoices/add">Créer une facture</a>
+        <br>
+        <br>
         <button routerLink="/">Retour aux clients</button>
-        <br>
-        <br>
-        <button routerLink="/{{customer?.id}}/invoices/add">Créer une facture</button>
     `,
     styles:[]
 })
