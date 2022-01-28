@@ -7,6 +7,8 @@ import { Customers } from "./types/customers";
 
     template: `
     <button routerLink="/create">Créer un client</button>
+    <br>
+    <br>
     <div id="table">
       <table>
         <tr *ngFor="let item of customers">
