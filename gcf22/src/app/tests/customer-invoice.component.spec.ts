@@ -30,7 +30,6 @@ describe('InvoiceListCustomer', () => {
 
         let MOCK_INVOICES = [
             {id: 1, amount: 1000, status: "MOCK_INVOICE_STATUS_1", idCustomer: 1},
-            {id: 3, amount: 1000, status: "MOCK_INVOICE_STATUS_2", idCustomer: 1},
         ]
 
         component.invoices = MOCK_INVOICES;
