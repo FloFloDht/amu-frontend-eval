@@ -1,12 +1,12 @@
-// Suites de tests permettant de s'assurer que le CustomerListComponent fonctionne correctement
-
 import { ComponentFixture, TestBed } from "@angular/core/testing"
 import { By } from "@angular/platform-browser";
 import { RouterModule } from "@angular/router";
 import { CustomersListComponent } from "../customers-list.component"
 
-// et fait ce que nous attendons de lui
+// Suites de tests permettant de s'assurer que le CustomerListComponent fonctionne correctement
+// et fait ce que nous attendons de lui. 
 describe('CustomerListComponent', () => {
+
     let fixture : ComponentFixture<CustomersListComponent>;
 
     let component : CustomersListComponent;
@@ -24,7 +24,8 @@ describe('CustomerListComponent', () => {
         component = fixture.componentInstance;
     });
 
-    // Le component devrait afficher dans l'interface HTML autant de clients qu'on lui donne dans sa propriété customers 
+    // Le component devrait afficher dans l'interface HTML autant de clients 
+    // qu'on lui donne dans sa propriété customers.
     it('should display print each customers given in input on the screen', () => {
 
         // Création d'unn tablea de clients tel qu'il serait si on le récupérait depuis l'API

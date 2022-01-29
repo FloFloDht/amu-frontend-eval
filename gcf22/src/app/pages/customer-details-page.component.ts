@@ -9,16 +9,15 @@ import { Invoice, Invoices } from "../types/invoices";
 
     selector:'app-customer-details-page',
     template:`
-        <ng-container *ngIf="customer">
-        <h2>Fiche de {{ customer.fullName }}</h2>
-        <h3>({{customer.email}})</h3>
-        
-        </ng-container>
 
-        <p *ngIf="!customer">En cours de chargement</p>
-        <app-customer-invoices [invoices]="invoices"></app-customer-invoices>
-        
-        <a routerLink="/{{customer?.id}}/invoices/add">Créer une facture</a>
+        <ng-container *ngIf="customer">
+            <h2>Fiche de {{ customer.fullName }}</h2>
+            <h3>({{customer.email}})</h3>
+
+            <app-customer-invoices [invoices]="invoices"></app-customer-invoices>
+            
+            <button routerLink="/{{customer?.id}}/invoices/add">Créer une facture</button>
+        </ng-container>
         <br>
         <br>
         <button routerLink="/">Retour aux clients</button>
