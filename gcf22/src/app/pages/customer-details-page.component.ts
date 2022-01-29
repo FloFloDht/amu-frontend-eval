@@ -3,8 +3,12 @@ import { ActivatedRoute } from "@angular/router";
 import { CustomersService } from "../api/customers.service";
 import { InvoicesService } from "../api/invoices.service";
 import { Customer } from "../types/customers";
-import { Invoice, Invoices } from "../types/invoices";
+import { Invoices } from "../types/invoices";
 
+
+/**
+ * Composant permettant d'afficher le détails de chacun des clients
+ */
 @Component({
 
     selector:'app-customer-details-page',
@@ -38,12 +42,18 @@ export class CustomerDetailsPageComponent{
         
         const id: number = Number(this.route.snapshot.paramMap.get('id'));
 
+        /**
+         * Utilisation du service CustomersService afin de récupérer et d'afficher les éléments du clients
+         */
         this.customersService
             .findOne(id)
             .subscribe(customers => {
                 console.log(customers[0])
                 this.customer = customers[0]});
 
+        /**
+         * Utilisation du service InvoicesService pour récupérer la liste des factures du client
+         */
         this.invoicesService
             .findAllByCustomerId(id)
             .subscribe(invoices => {

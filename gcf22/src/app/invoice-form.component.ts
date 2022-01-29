@@ -3,6 +3,10 @@ import { FormControl, FormGroup } from "@angular/forms";
 import { ActivatedRoute } from "@angular/router";
 import { Invoice } from "./types/invoices";
 
+
+/**
+ * Composant permettant la création d'une facture.
+ */
 @Component({
 
     selector: 'app-invoice-form',

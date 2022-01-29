@@ -17,6 +17,9 @@ export class CustomerFormPageComponent{
 
     constructor (private service: CustomersService ){ }
 
+    /**
+     * Utilisation du service pour ajouter le nouveau client auprès de l'API
+     */
     addCustomers(customer: any){
         this.service
           .create(customer.fullName, customer.email)

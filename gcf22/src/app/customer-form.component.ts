@@ -2,6 +2,9 @@ import { Component, Output, EventEmitter } from "@angular/core";
 import { FormControl, FormGroup } from "@angular/forms";
 import { Router } from "@angular/router";
 
+/**
+ * Composant permettant la création d'un nouveau client.
+ */
 @Component({
 
     selector: 'app-customer-form',
