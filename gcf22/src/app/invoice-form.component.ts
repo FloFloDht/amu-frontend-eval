@@ -13,19 +13,18 @@ import { Invoice } from "./types/invoices";
     template: `
         <h2>Création d'une facture</h2>
         <form (ngSubmit)="onSubmit()" [formGroup]="form">
-            <input
-                formControlName="amount"
-                type="number" 
-                name="amount" 
-                placeholder="Entrer le nom montant"
-            /> <br>
+            <div class="mb-3 mt-3">
+                <label for="amount">Montant:</label>
+                <input type="number" class="form-control" formControlName="amount" name="amount" placeholder="Entrer le montant">
+            </div>
             <div class="select">
+                <label for="status">Status:</label>
                 <select class="form-select" formControlName="status" name="status">
-                <option ngValue="PAID">PAID</option>
-                <option ngValue="SENT">SENT</option>
-          </select>
+                    <option ngValue="PAID">PAID</option>
+                    <option ngValue="SENT">SENT</option>
+                </select>
             </div><br>
-            <button type="submit" name="submit"> Enregistrer la facture</button>
+            <button class="btn btn-secondary" type="submit" name="submit"> Enregistrer la facture</button>
         </form>
     `,
     styles:[]

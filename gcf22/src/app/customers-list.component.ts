@@ -6,17 +6,21 @@ import { Customers } from "./types/customers";
     selector: 'app-customers-list',
 
     template: `
-    <button routerLink="/create">Créer un client</button>
-    <br>
-    <br>
-    <div id="table">
+    <div class="container">
+    <div class="card">
       <table>
         <tr *ngFor="let item of customers">
+        <div class="card-body">
           <td><a routerLink="/{{item.id}}">{{item.fullName}}</a> | {{item.email}}</td>
+        </div>
         </tr>
       </table>
     </div>
-  
+
+    <br>
+    <button type="button" class="btn btn-secondary" routerLink="/create">Créer un client</button>
+    </div>
+
     `,
     styles: []
 })

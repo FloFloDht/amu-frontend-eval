@@ -12,24 +12,18 @@ import { Router } from "@angular/router";
     template: `
         <h2>Créer un client</h2>
         <form (ngSubmit)="onSubmit()" [formGroup]="form">
-            <input
-                formControlName="fullName"
-                type="text" 
-                name="fullName" 
-                placeholder="Entrer le nom Complet"
-            /> <br>
-            <input
-            formControlName="email"
-                type="text" 
-                name="email" 
-                placeholder="Entrer un mail"
-            /><br>
-            <button type="submit" name="submit"> Enregistrer </button>
+            <div class="mb-3 mt-3">
+                <label for="fullName">Email:</label>
+                <input type="text" class="form-control" formControlName="fullName" name="fullName" placeholder="Entrer le nom complet">
+            </div>
+            <div class="mb-3 mt-3">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" formControlName="email" name="email" placeholder="Entrer un mail">
+            </div>
+            <button class="btn btn-secondary btn-sm" type="submit" name="submit"> Enregistrer </button>
         </form>
         <br>
-        <div id="formButton">
-            <button routerLink="/">Retour</button>
-        </div>
+        <button class="btn btn-dark btn-sm" routerLink="/">Retour</button>
     `,
     styles: []
 })
