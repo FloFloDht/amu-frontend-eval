@@ -6,16 +6,23 @@ import { Invoices } from "./types/invoices";
     selector: 'app-customer-invoices',
 
     template: `
-        <table>
-            <tr>
-                <th>Montant</th>
-                <th>Status</th>
-            </tr>
-            <tr *ngFor="let invoice of invoices">
-                <td>{{invoice.amount}}</td>
-                <td>{{invoice.status}}</td>
-            </tr>
+    <div class="container mt-3">
+        <h4>Facture(s)</h4>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Montant</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let invoice of invoices">
+                    <td>{{invoice.amount}} €</td>
+                    <td>{{invoice.status}}</td>
+                </tr>
+            </tbody>
         </table>
+    </div>
     `
 
 })

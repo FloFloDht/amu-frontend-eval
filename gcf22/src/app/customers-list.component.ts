@@ -6,8 +6,8 @@ import { Customers } from "./types/customers";
     selector: 'app-customers-list',
 
     template: `
-    <div class="container">
-    <div class="card">
+    <div class="container mt-3">
+    <div class="card bg-light text-dark">
       <table>
         <tr *ngFor="let item of customers">
         <div class="card-body">

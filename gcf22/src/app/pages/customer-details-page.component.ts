@@ -20,11 +20,11 @@ import { Invoices } from "../types/invoices";
 
             <app-customer-invoices [invoices]="invoices"></app-customer-invoices>
             
-            <button class="btn btn-secondary" routerLink="/{{customer?.id}}/invoices/add">Créer une facture</button>
+            <button class="btn btn-secondary btn-sm" routerLink="/{{customer?.id}}/invoices/add">Créer une facture</button>
         </ng-container>
         <br>
         <br>
-        <button class="btn btn-secondary" routerLink="/">Retour aux clients</button>
+        <button class="btn btn-secondary btn-sm " routerLink="/">Retour aux clients</button>
     `,
     styles:[]
 })
